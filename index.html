@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WikiCerva</title>
+
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/webroot/images/favicon.ico" type="image/x-icon" />
+
+    <!-- iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="WikiCerva" />
+    <link rel="apple-touch-icon" href="/webroot/images/icones/icon144.png" />
+
+    <meta name="description" content="WikiCerva" />
+    <meta name="theme-color" content="#694a84" />
+
+    <link href="manifest.json" rel="manifest" />
+    <link
+      href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="webroot/css/style.css" rel="stylesheet" />
+    <link href="webroot/css/fontawesome.css" rel="stylesheet" />
+    <link href="webroot/css/solid.css" rel="stylesheet" />
+    <link href="webroot/css/brands.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- conteúdo da página -->
+
+    <header class="container-fluid fixed-top text-center p-0">
+      <img src="/webroot/images/icon.png" class="logo" />
+
+      <div class="row">
+        <div class="col-12 nomeApp">WikiCerva</div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link disabled">Disabled</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <section id="cervejarias"></section>
+      </div>
+
+      <div id="card-container"></div>
+
+      <section id="cervejas"></section>
+    </main>
+
+    <!-- <footer class="fixed-bottom"> -->
+    <footer class="container-fluid fixed-bottom text-center">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-warning">
+          <i class="fa-solid fa-beer-mug-empty"></i> Top Cervejas
+        </button>
+        <button type="button" class="btn btn-warning">
+          <i class="fa-solid fa-beer-mug-empty"></i> Minhas Cervejas
+        </button>
+        <button type="button" class="btn btn-danger" hidden id="btInstall">
+          Instalar App
+        </button>
+      </div>
+    </footer>
+
+    <script src="vendor/components/jquery/jquery.min.js"></script>
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="webroot/js/app.js"></script>
+    <script type="text/javascript" src="webroot/js/fontawesome.min.js"></script>
+
+    <script>
+      let swRegistro = null;
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then((reg) => {
+            swRegistro = reg;
+            console.log("Service Worker registrado com sucesso");
+            inicializarInstalacao();
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

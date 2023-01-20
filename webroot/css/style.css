@@ -1,0 +1,45 @@
+header {
+  background-image: url("../images/header.jpg");
+  height: 200px;
+  padding: 0;
+}
+
+main {
+  margin-top: 250px;
+  margin-bottom: 100px;
+}
+
+.bg-light {
+  background-color: rgb(255 232 203) !important;
+}
+
+footer {
+  padding: 10px;
+  height: 60px;
+  background: rgb(255 232 203)
+}
+
+.nomeApp {
+  font-size: 40px;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans",
+    "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  color: #a12626;
+  font-weight: bold;
+  text-shadow: -1px -1px 0px #fff, -1px 1px 0px #fff, 1px -1px 0px #fff,
+    1px 0px 0px #fff;
+}
+
+.navbar {
+  /*margin-top: 80px;*/
+}
+
+.logo {
+  margin-top: 20px;
+  width: 100px;
+}
+
+#cervejarias {
+}
+
+#cervejas {
+}
